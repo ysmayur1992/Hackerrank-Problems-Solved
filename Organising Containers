@@ -1,0 +1,15 @@
+string organizingContainers(vector<vector<int>> container, int n) {
+string str="Possible";
+vector<int> row(n,0),col(n,0);
+for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+        col[i] += container[i][j];
+        row[i] += container[j][i];
+        }
+    }
+    sort(col.begin(),col.end());
+    sort(row.begin(),row.end());
+    if(col==row) str="Possible";
+    else str="Impossible";
+return str;
+}
