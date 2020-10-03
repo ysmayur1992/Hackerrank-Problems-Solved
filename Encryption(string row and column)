@@ -1,0 +1,11 @@
+string encryption(string s) {
+int col;
+string res;
+int ro = round(sqrt(s.size()));
+(ro>=(sqrt(s.size())))?col=ro:col=ro+1;
+for(int i=0;i<col;i++){
+    for(int j=i;j<s.size();j+=col) res+=s[j];
+    res+=' ';
+}
+return res;
+}
